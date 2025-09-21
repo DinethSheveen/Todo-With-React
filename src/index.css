@@ -3,3 +3,15 @@
   margin: 0;
   padding: 0;
 }
+
+.todo-container{
+  margin: 10rem auto;
+  max-width: 50%;
+}
+
+.heading,.task-container{
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  border: 1px solid black;
+}
+
