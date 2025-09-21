@@ -32,7 +32,9 @@ function App() {
     setDuty("")
   }
 
-  function removeTask(){}
+  function removeTask(index){
+    setTasks(tasks.filter((_,i)=>{return i!=index}))
+  }
 
   return (
     <div className='app-container'>
@@ -55,7 +57,7 @@ function App() {
             <div key={index} className='tasks'>
               <div>{task.task}</div>
               <div>{task.dueDate}</div>
-              <div className='dlt-btn' onClick={removeTask}>Delete</div>
+              <div className='dlt-btn' onClick={()=>removeTask(index)}>Delete</div>
             </div>
           ) 
         })}
