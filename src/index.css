@@ -9,6 +9,10 @@ body{
   color: hsl(0, 0%, 100%);
 }
 
+.app-container{
+  min-width: 400px;
+}
+
 .controls{
   padding: 1rem;
   display: flex;
@@ -65,4 +69,47 @@ body{
 .task-showcase .tasks{
   font-size: 1.5rem;
   margin: 1rem 0 1rem 0;
+}
+
+.dlt-btn{
+  background-color: hsl(0, 100%, 50%); 
+  width: 120px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+}
+
+.dlt-btn:active{
+  background-color: hsl(0, 100%, 60%);
+}
+
+@media(min-width:576px) and (max-width:767px){
+  .task-showcase .heading,
+  .task-showcase .tasks {
+    grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:320px) and (max-width: 575px) {
+  .task-showcase {
+    max-width: 100%;
+  }
+
+  .task-showcase .heading,
+  .task-showcase .tasks {
+    grid-template-columns: repeat(auto-fit, minmax(60px, auto));
+    font-size: 1rem;
+  }
+
+  .task-input,
+  .date-input {
+    font-size: 0.8rem;
+  }
+
+  .add-btn,.dlt-btn{
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
