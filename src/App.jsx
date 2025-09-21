@@ -16,13 +16,23 @@ function App() {
   }
 
   function addTask(){
-    const newTask = {
-                      task : duty,
-                      dueDate : date
-                    }
 
-    setTasks(prevTasks=>[...prevTasks,newTask])
+    if(!duty){
+      return
+    }
+    else{
+      const newTask = {
+                        task : duty,
+                        dueDate : date
+                      }
+
+      setTasks(prevTasks=>[...prevTasks,newTask])
+    }
+    setDate("")
+    setDuty("")
   }
+
+  function removeTask(){}
 
   return (
     <div className='app-container'>
@@ -45,7 +55,7 @@ function App() {
             <div key={index} className='tasks'>
               <div>{task.task}</div>
               <div>{task.dueDate}</div>
-              <div>Delete</div>
+              <div className='dlt-btn' onClick={removeTask}>Delete</div>
             </div>
           ) 
         })}
